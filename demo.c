@@ -4,6 +4,7 @@
 
 #include "demo.h"
 #include "getExp.h"
+#include "getZip.h"
 
 int getInput(char *buff, int len)
 {
@@ -80,14 +81,6 @@ int getCCN(char *buff)
 
 
 
-
-int getZip(char *buff)
-{
-    printf("Enter your zip code: ");
-    fgets(buff, ZIP_LEN, stdin);
-    cleanInput(buff);
-    return 0;
-}
 
 int getPrice(char *buff)
 {
