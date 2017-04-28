@@ -17,4 +17,7 @@ install:
   - sudo apt-get install -qq zzuf
 script:
     - make
-    - ./demo < tests/test1.txt | grep "xxx@yyy.zzz"
+    - ./demo < tests/valid.txt | grep "xxx@yyy.zzz"
+    - ./demo < tests/error_name.txt | grep "Invalid"
+    - ./demo < tests/error_ccn.txt | grep "Invalid"
+    - ./demo < tests/error_exp.txt | grep "Invalid"
