@@ -23,3 +23,4 @@ script:
     - ./demo < tests/error_exp.txt | grep "Invalid"
     - ./demo < tests/error_zip.txt | grep "Invalid"
     - ./demo < tests/error_price.txt | grep "Invalid"
+    - ./demo < tests/error_email.txt | grep "Invalid"

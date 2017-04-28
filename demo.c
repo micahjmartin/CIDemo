@@ -112,6 +112,8 @@ int main(void)
     if (getEmail(email) != 0)
 	FINISH
     
+    printf("\n\n");
+
     printf("Name: %s\n", name);
     printf("Credit card number: %s\n", ccn);
     printf("Expiration month and year: %s\n", exp);
