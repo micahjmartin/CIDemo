@@ -21,3 +21,5 @@ script:
     - ./demo < tests/error_name.txt | grep "Invalid"
     - ./demo < tests/error_ccn.txt | grep "Invalid"
     - ./demo < tests/error_exp.txt | grep "Invalid"
+    - ./demo < tests/error_zip.txt | grep "Invalid"
+    - ./demo < tests/error_price.txt | grep "Invalid"

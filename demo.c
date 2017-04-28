@@ -5,6 +5,7 @@
 #include "demo.h"
 #include "getExp.h"
 #include "getZip.h"
+#include "getPrice.h"
 
 int getInput(char *buff, int len)
 {
@@ -78,19 +79,6 @@ int getCCN(char *buff)
     return 0;
 }
 
-
-
-
-
-int getPrice(char *buff)
-{
-    printf("Enter the purchase amount: ");
-    fgets(buff, BUFF_LEN, stdin);
-    cleanInput(buff);
-    return 0;
-}
-
-
 void cleanup(int i)
 {
     // Free all the buffers
@@ -116,12 +104,12 @@ int main(void)
 	FINISH
     if (getExp(exp) != 0)
 	FINISH
+    if (getZip(zip) != 0)
+	FINISH
+    if (getPrice(price) != 0)
+	FINISH
+    
 
-
-    printf("Enter your zip code: ");
-    getInput(zip,ZIP_LEN);
-    printf("Enter your purchase amount: ");
-    getInput(price,BUFF_LEN);
     printf("Enter your email: ");
     getInput(email,BUFF_LEN);
 
