@@ -3,12 +3,7 @@
 #include <stdlib.h>
 
 #include "demo.h"
-
-#define FINISH {retval = 1; goto CLEANUP;}
-#define BUFF_LEN 500
-#define CCN_LEN 16+3+1+1
-#define EXP_LEN 9+1+4+1+1
-#define ZIP_LEN 5+1+4+1+1
+#include "getExp.h"
 
 int getInput(char *buff, int len)
 {
@@ -42,7 +37,7 @@ int getName(char *buff)
     
     if(strchr(buff,' ') == NULL)
     {
-	printf("Does not contain two names\n");
+	printf("Invalid: Does not contain two names\n");
 	return 1;
     }
     return 0;
@@ -57,7 +52,7 @@ int getCCN(char *buff)
     int dashes = 0; // get the number of dashes in the string. 
     if(strlen(buff) != 19)
     {
-	printf("Invalid length of credit card number\n",ch);
+	printf("Invalid length of credit card number\n");
 	return 1;
     }
     for(unsigned int i = 0; i < strlen(buff); i++)
@@ -76,20 +71,14 @@ int getCCN(char *buff)
     }
     if(dashes != 3)
     {
-	printf("Invalid: Please follow the following format: xxxx-xxxx-xxxx-xxxx");
+	printf("Invalid: Please follow the following format: xxxx-xxxx-xxxx-xxxx\n");
 	return 1;
     }
     return 0;
 }
 
 
-int getExp(char *buff)
-{
-    printf("Enter your expiration date: ");
-    fgets(buff, EXP_LEN, stdin);
-    cleanInput(buff);
-    return 0;
-}
+
 
 
 int getZip(char *buff)
@@ -132,6 +121,9 @@ int main(void)
 	FINISH
     if (getCCN(ccn) != 0)
 	FINISH
+    if (getExp(exp) != 0)
+	FINISH
+
 
     printf("Enter your Expiration month and year: ");
     getInput(exp,EXP_LEN);
