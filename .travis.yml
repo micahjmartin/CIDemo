@@ -17,6 +17,7 @@ install:
   - sudo apt-get install -qq zzuf
 script:
     - make
+    - cppcheck --quiet --error-exitcode=1 
     - ./demo < tests/valid.txt | grep "xxx@yyy.zzz"
     - ./demo < tests/error_name.txt | grep "Invalid"
     - ./demo < tests/error_ccn.txt | grep "Invalid"
@@ -24,3 +25,7 @@ script:
     - ./demo < tests/error_zip.txt | grep "Invalid"
     - ./demo < tests/error_price.txt | grep "Invalid"
     - ./demo < tests/error_email.txt | grep "Invalid"
+    - zzuf -B 10000 ./demo < /dev/null
+    - zzuf -B 10000 ./demo < /dev/urandom
+    - zzuf -B 10000 ./demo < test/error_ccn.txt | grep "Invalid"
+
