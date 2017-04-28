@@ -125,8 +125,6 @@ int main(void)
 	FINISH
 
 
-    printf("Enter your Expiration month and year: ");
-    getInput(exp,EXP_LEN);
     printf("Enter your zip code: ");
     getInput(zip,ZIP_LEN);
     printf("Enter your purchase amount: ");
