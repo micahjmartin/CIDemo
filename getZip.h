@@ -1,5 +1,5 @@
-#ifndef GETEXP_H
-#define GETEXP_H
+#ifndef GETZIP_H
+#define GETZIP_H
 
 int getZip(char *buff);
 

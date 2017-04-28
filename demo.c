@@ -6,6 +6,7 @@
 #include "getExp.h"
 #include "getZip.h"
 #include "getPrice.h"
+#include "getEmail.h"
 
 int getInput(char *buff, int len)
 {
@@ -108,11 +109,9 @@ int main(void)
 	FINISH
     if (getPrice(price) != 0)
 	FINISH
+    if (getEmail(email) != 0)
+	FINISH
     
-
-    printf("Enter your email: ");
-    getInput(email,BUFF_LEN);
-
     printf("Name: %s\n", name);
     printf("Credit card number: %s\n", ccn);
     printf("Expiration month and year: %s\n", exp);

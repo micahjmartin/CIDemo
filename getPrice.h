@@ -1,5 +1,5 @@
-#ifndef GETEXP_H
-#define GETEXP_H
+#ifndef GETPRICE_H
+#define GETPRICE_H
 
 int getPrice(char *buff);
 
