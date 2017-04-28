@@ -17,4 +17,4 @@ install:
   - sudo apt-get install -qq zzuf
 script:
     - make
-    - ./demo
+    - ./demo < tests/test1.txt | grep "xxx@yyy.zzz"
